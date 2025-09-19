@@ -1,0 +1,244 @@
+@import './animations.css';
+
+.container {
+    transform: scale(1);
+    transform-origin: center;
+}
+.face {
+    background: var(--skin-color);
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    position: relative;
+    z-index: 1;
+    animation:
+        headMove 1s ease-in-out 0s 1 forwards,
+        headMoveUp 1s ease-in-out 4s 1 forwards
+        ;
+}
+.face::before, .face::after {
+    background: var(--skin-color);
+    content: '';
+    width: 40px;
+    height: 30px;
+    display: block;
+    border-radius: 16px;
+    position: absolute;
+    left: -16px;
+    top: 46px;
+    z-index: -1;
+    transform-origin: center;
+    animation:
+        earUp 1s ease-in-out 0s 1 forwards,
+        earDown 1s ease-in-out 4s 1 forwards
+        ;
+}
+
+.face::after {
+    left: 76px;
+}
+.blush::before, .blush::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: var(--blush-color);
+    border-radius: 20px;
+    top: 76px;
+    left: 12px;
+    animation: blushShow 1s ease-in-out 5s 1 forwards;
+    opacity: 0;
+}
+.blush::after {
+    left: auto;
+    right: 12px;
+}
+.eye, .eye-2 {
+    position: absolute;
+    height: 20px;
+    top: 50px;
+    left: 28px;
+    width: 8px;
+    background-color: black;
+    border-radius: 10px;
+    transform-origin: center;
+    animation:
+        eyeMoveY 1s ease-in-out 0s 1 forwards,
+        eyeMoveX 1s ease-in-out 1s 3 forwards,
+        eyeUp 1s ease-in-out 4s 1 forwards,
+        blink 0.2s ease-in-out 5s 2
+        ;
+    overflow:hidden
+}
+.eye::before, .eye-2::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 16px;
+    background: white;
+    top: 10px;
+    background: #36436e;
+    left: 0;
+    transform: rotate(-15deg);
+}
+
+.eye-2 {
+    left: 64px;
+    animation:
+        eyeMoveY 1s ease-in-out 0s 1 forwards,
+        eyeMoveX2 1s ease-in-out 1s 3 forwards,
+        eyeUp 1s ease-in-out 4s 1 forwards,
+        blink 0.2s ease-in-out 5s 2
+        ;
+}
+
+.hair {
+    position: absolute;
+    width: 120px;
+    height: 110px;
+    background: var(--hair-color);
+    border-radius: 60px 60px 20px 20px;
+    top: -20px;
+    left: -8px;
+    z-index: 0;
+    animation: hairUp 1s ease-in-out 0s 1 forwards,
+        hairDown 1s ease-in-out 4s 1 forwards
+        ;
+}
+
+.hair::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 60px;
+    background: var(--hair-color);
+    border-radius: 0px 50px 0px 50px;
+    top: 100px;
+    right: 20px;
+    animation: 
+        ponytailUp 1s ease-in-out 0s 1 forwards,
+        ponytailDown 1s ease-in-out 4s 1 forwards
+        ;
+}
+.bangs {
+    position: absolute;
+    left:0;
+    top:-25px;
+    z-index:2;
+    /* animation:
+        bangsMoveDown 1s ease-in-out 0s 1 forwards,
+        bangsMoveUp 1s ease-in-out 4s 1 forwards
+        ;     */
+}
+
+.bangs-left::before {
+    content: '';
+    background: var(--hair-color);
+    left: -2px;
+    width: 75px;
+    height: 56px;
+    position: absolute;
+    border-radius: 40px 0px 40px 10px;
+    top: 10px;
+    animation:
+        bangsMoveDown 1s ease-in-out 0s 1 forwards,
+        bangsMoveUp 1s ease-in-out 4s 1 forwards
+        ;    
+}
+
+.bangs-left::after {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 96px;
+    top: 36px;
+    left: -6px;
+    border-radius: 20px 0 0px 20px;
+    background-color: var(--hair-color);
+    transform-origin: center;
+    animation:
+        bangsLeftHeight 1s ease-in-out 0s 1 forwards,
+        bangsLeftHeightUp 1s ease-in-out 4s 1 forwards
+        ;
+}
+
+.bangs-right::before {
+    position: absolute;
+    content: '';
+    width: 31px;
+    height: 57px;
+    background: var(--hair-color);
+    border-radius: 0px 40px 0px 40px;
+    top: 14px;
+    left: 69px;
+    z-index: 2;
+    transform-origin: center;
+    animation:
+        bangsRightHeight 1s ease-in-out 0s 1 forwards,
+        bangsRightHeightUp 1s ease-in-out 4s 1 forwards
+        ;
+}
+
+.body {
+    position: absolute;
+    width: 66px;
+    height: 40px;
+    background: var(--shirt-color);
+    border-radius: 100px 100px 0 0;
+    top: 105px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.body::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 25px;
+    background: var(--skin-color);
+    top: -15px;
+    border-radius: 20px;
+}
+
+.hands::before, .hands::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--skin-color);
+    border-radius: 20px;
+    top: 132px;
+    left: 20px;
+    z-index: 2;
+}
+
+.hands::after {
+    left: auto;
+    right: 20px;
+}
+
+.laptop {
+    width: 100px;
+    height: 10px;
+    position: absolute;
+    top: 146px;
+    left: 40%;
+    transform: translateX(-50%);
+    background: var(--laptop-color);
+    border-radius: 4px;
+    z-index: 2;
+}
+.laptop::before {
+    content: '';
+    position: absolute;
+    width: 90px;
+    height: 60px;
+    background: var(--laptop-color-2);
+    border-radius: 8px;
+    top: -50px;
+    left: -20%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 2;
+}
