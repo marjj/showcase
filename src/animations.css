@@ -92,14 +92,14 @@
 }
 
 @keyframes hairUp {
-    0% { top: -20px; }
-    50% { top: -25px; }
-    100% { top: -25px; }
+    0% { top: 0px; }
+    50% { top: -2px; }
+    100% { top: -2px; }
 }
 @keyframes hairDown {
-    0% { top: -25px; }
-    50% { top: -20px; }
-    100% { top: -20px; }
+    0% { top: -2px; }
+    50% { top: 0px; }
+    100% { top: 0px; }
 }
 
 @keyframes ponytailUp {
